@@ -1,0 +1,207 @@
+:root {
+  --pico-primary: #0D47A1;
+  --pico-primary-hover: #1565C0;
+  --pico-primary-focus: rgba(13, 71, 161, 0.25);
+  --pico-primary-inverse: #FFF;
+}
+
+html {
+  font-size: 90%;
+}
+
+[data-theme="dark"] {
+  --pico-primary: #42A5F5;
+  --pico-primary-hover: #64B5F6;
+  --pico-primary-focus: rgba(66, 165, 245, 0.25);
+  --pico-card-background-color: #182330;
+}
+
+/* Base Styles */
+.hero {
+  background-color: var(--pico-card-background-color);
+  border-radius: var(--pico-card-border-radius);
+  padding: 2rem;
+  text-align: center;
+}
+
+.brand-logo {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  color: var(--pico-primary);
+}
+
+.footer-socials a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--pico-secondary);
+}
+
+.footer-socials a:hover {
+  color: var(--pico-secondary-hover);
+}
+
+.footer-socials svg {
+  width: 24px;
+  height: 24px;
+}
+
+.culture-illustration {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--pico-card-border-radius);
+  margin-top: 2rem;
+}
+
+#terms-content article {
+  margin-bottom: 2rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    color: var(--pico-nav-link-color);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    font-size: 1.25rem;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-toggle:hover {
+    color: var(--pico-primary-hover);
+}
+
+/* === Navigation Styles === */
+
+/* General Nav alignment */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Needed for mobile menu positioning */
+}
+
+header nav ul {
+    margin: 0;
+}
+
+/* Hide mobile-only elements by default on desktop/tablet */
+.mobile-only-elements {
+    display: none;
+}
+
+/* Desktop Navigation Layout */
+.desktop-nav-group {
+    display: flex; /* Make this a flex container to hold center and right groups */
+    justify-content: space-between; /* Space out center and right groups */
+    flex-grow: 1; /* Take up available space between logo and hamburger */
+    align-items: center;
+}
+
+.desktop-nav-center {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Allow it to grow and push desktop-nav-right further right */
+    padding: 0 1rem; /* Give some space around centered links */
+}
+
+.desktop-nav-right {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+}
+
+.desktop-nav-center li, .desktop-nav-right li {
+    padding: 0 0.75rem;
+}
+.desktop-nav-right .theme-toggle {
+    margin-right: 0.75rem; /* Space between theme toggle and first button */
+}
+
+
+/* Mobile Menu Container - Hidden on Desktop/Tablet */
+#mobile-menu {
+    display: none;
+}
+
+/* === Responsive Design for Mobile Only === */
+@media (max-width: 768px) {
+  /* Hide desktop nav elements on mobile */
+  .desktop-nav-group {
+    display: none;
+  }
+
+  /* Show mobile-only elements */
+  .mobile-only-elements {
+    display: flex; /* Make hamburger and other mobile-only items visible */
+    align-items: center;
+  }
+  
+  #hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--pico-contrast);
+    margin-left: 1rem; /* Space between logo and hamburger */
+  }
+
+  /* Mobile Menu Container */
+  #mobile-menu {
+    display: none; /* Still hidden by default, toggled by JS */
+    position: fixed; /* Fixed position for overlay */
+    top: 3.5rem; /* Below header, adjust if header height changes */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 3.5rem); /* Full height below header */
+    background-color: var(--pico-card-background-color);
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: var(--pico-card-box-shadow);
+    z-index: 1000;
+    overflow-y: auto; /* Scroll if content overflows */
+  }
+  
+  #mobile-menu.is-open {
+    display: flex; /* Show when hamburger is clicked */
+  }
+
+  #mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  #mobile-menu ul li {
+    margin-bottom: 1rem;
+  }
+  #mobile-menu ul li a, #mobile-menu ul li button {
+      width: 100%;
+  }
+  #mobile-menu ul li a[role="button"], #mobile-menu ul li .theme-toggle {
+      text-align: center;
+  }
+  #mobile-menu ul li .theme-toggle {
+      justify-content: center; /* Center the theme toggle icon and text */
+      text-decoration: none; /* Remove underline for entire button */
+      color: var(--pico-nav-link-color); /* Inherit color */
+      padding: var(--pico-form-element-spacing);
+  }
+  #mobile-menu ul li .theme-toggle:hover {
+      color: var(--pico-primary-hover);
+      background-color: var(--pico-form-element-background-color);
+  }
+}
