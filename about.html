@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tentang Kami - Taliti.id</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
   <main class="container">
@@ -17,38 +18,48 @@
 
     <!-- Konten Tentang Kami -->
     <section style="padding: 4rem 0;">
-      <div style="text-align: center;">
+      <div class="text-center">
         <h1>Tentang Taliti.id</h1>
-        <p>Mengubah Lautan Data di Web Menjadi Aset Terstruktur untuk Bisnis Anda.</p>
+        <p>Mitra Data Intelligence Terpercaya untuk Pertumbuhan Bisnis Anda.</p>
       </div>
 
-      <div class="grid" style="margin-top: 4rem; align-items: center;">
+      <div class="grid mt-2" style="align-items: center;">
         <div>
           <h2>Cerita Kami</h2>
-          <p>Taliti.id lahir dari sebuah observasi sederhana: banyak bisnis, peneliti, dan individu kesulitan mengumpulkan data dari web secara efisien. Proses manual tidak hanya memakan waktu tetapi juga rentan terhadap kesalahan. Di sisi lain, solusi enterprise yang ada seringkali mahal dan tidak fleksibel, mengharuskan pengguna untuk berlangganan paket yang tidak sepenuhnya mereka butuhkan.</p>
-          <p>Kami hadir untuk menjembatani kesenjangan tersebut. Taliti dirancang sebagai platform pay-per-use yang kuat namun mudah diakses, memungkinkan siapa saja untuk melakukan crawling data web dengan biaya yang transparan dan terjangkau.</p>
+          <p>Taliti.id lahir dari kebutuhan akan transparansi dan kemudahan akses data. Di era digital ini, informasi
+            adalah aset paling berharga, namun seringkali terkunci di balik sistem yang kompleks atau biaya berlangganan
+            yang mahal.</p>
+          <p>Kami hadir untuk mendemokratisasi akses data. Taliti bukan sekadar alat pencari, melainkan platform
+            intelligence yang menghubungkan Anda dengan data pasar, kompetitor, dan tren industri secara real-time.
+            Dengan model pay-as-you-go, kami memastikan setiap bisnis, dari rintisan hingga korporasi, dapat membuat
+            keputusan berbasis data yang akurat tanpa hambatan.</p>
         </div>
-        <div>
-          <svg class="culture-illustration" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100" height="60" fill="#E3F2FD"/>
-            <circle cx="20" cy="30" r="10" fill="#90CAF9"/>
-            <circle cx="50" cy="30" r="10" fill="#64B5F6"/>
-            <circle cx="80" cy="30" r="10" fill="#42A5F5"/>
-            <path d="M20 30 L 50 30 L 80 30" stroke="#1976D2" stroke-width="1" stroke-dasharray="2 2"/>
-            <text x="50" y="50" font-family="sans-serif" font-size="6" text-anchor="middle" fill="#0D47A1">Kolaborasi & Inovasi</text>
+        <div class="text-center">
+          <svg class="culture-illustration" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg"
+            style="max-width: 100%; height: auto;">
+            <rect width="100" height="60" fill="#FDF8F5" rx="4" />
+            <circle cx="20" cy="30" r="10" fill="#0DB473" />
+            <circle cx="50" cy="30" r="10" fill="#191919" />
+            <circle cx="80" cy="30" r="10" fill="#006A43" />
+            <path d="M20 30 L 50 30 L 80 30" stroke="#666" stroke-width="1" stroke-dasharray="2 2" />
+            <text x="50" y="50" font-family="Inter, sans-serif" font-size="6" text-anchor="middle"
+              fill="#191919">Insight & Strategi</text>
           </svg>
         </div>
       </div>
-      
-      <div style="margin-top: 4rem;">
+
+      <div class="mt-2">
         <h2>Visi & Misi</h2>
-        <p><strong>Visi:</strong> Menjadi platform andalan di Asia Tenggara untuk agregasi data web yang cerdas, cepat, dan dapat diakses oleh semua skala bisnis.</p>
-        <p><strong>Misi:</strong> Menyediakan teknologi crawler yang intuitif dengan model bisnis yang adil, memberdayakan pengguna untuk membuat keputusan berbasis data tanpa hambatan biaya atau teknis.</p>
+        <p><strong>Visi:</strong> Menjadi platform data intelligence terdepan yang memberdayakan inovasi ekonomi digital
+          di Asia Tenggara.</p>
+        <p><strong>Misi:</strong> Menyediakan akses data berkualitas tinggi yang cepat, akurat, dan terjangkau, membantu
+          para pemimpin bisnis menavigasi pasar dengan percaya diri.</p>
       </div>
     </section>
 
     <!-- Hubungi Kami -->
-    <section style="padding: 4rem 0; background-color: var(--pico-card-background-color); border-radius: var(--pico-card-border-radius);">
+    <section class="mt-2"
+      style="padding: 4rem 0; background-color: var(--pico-card-background-color); border-radius: var(--pico-card-border-radius);">
       <div class="container">
         <div class="grid">
           <div>
@@ -57,14 +68,15 @@
             <form>
               <label for="name">Nama</label>
               <input type="text" id="name" name="name" placeholder="Nama Anda" required>
-              
+
               <label for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="Email Anda" required>
 
               <label for="message">Pesan</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan Anda di sini..."
+                required></textarea>
 
-              <button type="submit">Kirim Pesan</button>
+              <button type="submit" class="primary">Kirim Pesan</button>
             </form>
           </div>
           <div>
@@ -72,9 +84,8 @@
             <p>Kunjungi kami atau kirimkan surat ke alamat di bawah ini.</p>
             <article>
               <strong>Taliti.id HQ</strong><br>
-              Jalan Teknologi No. 42<br>
-              Kuningan, Jakarta Selatan<br>
-              Indonesia, 12950
+              Jakarta Selatan, DKI Jakarta<br>
+              Indonesia
               <br><br>
               <strong>Email</strong><br>
               <a href="mailto:infotaliti@gmail.com">infotaliti@gmail.com</a>
@@ -85,11 +96,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="container" style="padding-top: 4rem; border-top: 1px solid var(--pico-muted-border-color); margin-top: 4rem;"></footer>
+    <footer class="container"></footer>
 
   </main>
-  
+
   <script src="shared.js" defer></script>
 
 </body>
+
 </html>

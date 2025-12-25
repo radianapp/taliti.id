@@ -50,32 +50,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initializeNavInteraction() {
         // --- Theme Toggler ---
+        // --- Theme Toggler ---
         const desktopToggle = document.getElementById('theme-toggle');
         const mobileToggle = document.getElementById('mobile-theme-toggle');
         
-        if (desktopToggle && mobileToggle) {
-            const desktopIcon = desktopToggle.querySelector('i');
-            const mobileIcon = mobileToggle.querySelector('i');
+        const applyTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            const isDark = theme === 'dark';
+            
+            if (desktopToggle) {
+                const desktopIcon = desktopToggle.querySelector('i');
+                if (desktopIcon) {
+                    desktopIcon.classList.toggle('fa-sun', isDark);
+                    desktopIcon.classList.toggle('fa-moon', !isDark);
+                }
+            }
 
-            const applyTheme = (theme) => {
-                document.documentElement.setAttribute('data-theme', theme);
-                const isDark = theme === 'dark';
-                desktopIcon.classList.toggle('fa-sun', isDark);
-                desktopIcon.classList.toggle('fa-moon', !isDark);
-                mobileIcon.classList.toggle('fa-sun', isDark);
-                mobileIcon.classList.toggle('fa-moon', !isDark);
-            };
+            if (mobileToggle) {
+                const mobileIcon = mobileToggle.querySelector('i');
+                if (mobileIcon) {
+                    mobileIcon.classList.toggle('fa-sun', isDark);
+                    mobileIcon.classList.toggle('fa-moon', !isDark);
+                }
+            }
+        };
 
-            const toggleTheme = () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                localStorage.setItem('theme', currentTheme);
-                applyTheme(currentTheme);
-            };
+        const toggleTheme = () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            applyTheme(currentTheme);
+        };
 
-            applyTheme(localStorage.getItem('theme') || 'light');
-            desktopToggle.addEventListener('click', toggleTheme);
-            mobileToggle.addEventListener('click', toggleTheme);
-        }
+        applyTheme(localStorage.getItem('theme') || 'light');
+
+        if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+        if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
 
         // --- Hamburger Menu ---
         const hamburgerBtn = document.getElementById('hamburger-btn');

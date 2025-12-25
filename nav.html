@@ -1,13 +1,13 @@
 <nav>
   <ul>
     <li>
-      <a href="index.html" style="text-decoration: none; font-weight: bold; font-size: 1.5rem;">
-        <img src="logo.svg" alt="Taliti Logo" class="brand-logo">
-        Taliti
+      <a href="index.html" class="brand-link">
+        <img src="logo.png" alt="Taliti Logo" class="brand-logo">
+        <strong>Taliti</strong>
       </a>
     </li>
   </ul>
-  
+
   <div class="desktop-nav">
     <ul class="desktop-nav-center">
       <li><a class="nav-link" href="#features">Fitur</a></li>
@@ -15,12 +15,13 @@
       <li><a class="nav-link" href="about.html">Tentang Kami</a></li>
     </ul>
     <ul class="desktop-nav-right">
-      <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme"><i class="fa-solid fa-moon"></i></button></li>
-      <li><a href="#" role="button" class="secondary">Sign Up</a></li>
-      <li><a href="#" role="button">Login</a></li>
+      <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      </li>
+      <li><a href="https://app.taliti.id/accounts/login/" role="button" class="outline">Login</a></li>
+      <li><a href="https://app.taliti.id/accounts/signup/" role="button" class="primary">Sign Up Free</a></li>
     </ul>
   </div>
-  
+
   <button id="hamburger-btn" aria-label="Toggle Menu">☰</button>
 
   <div id="mobile-nav-links">
@@ -28,10 +29,28 @@
       <li><a class="nav-link" href="#features">Fitur</a></li>
       <li><a class="nav-link" href="#pricing">Harga</a></li>
       <li><a class="nav-link" href="about.html">Tentang Kami</a></li>
-      <li><hr></li>
-      <li><a href="#" role="button" class="secondary">Sign Up</a></li>
-      <li><a href="#" role="button">Login</a></li>
-      <li><button class="theme-toggle" id="mobile-theme-toggle" title="Toggle theme"><i class="fa-solid fa-moon"></i>&nbsp; Ganti Tema</button></li>
+      <li>
+        <hr style="border: 0; border-top: 1px solid var(--brevo-light-gray); width: 100%;">
+      </li>
+      <li><a href="https://app.taliti.id/accounts/login/" role="button" class="outline" style="width: 100%;">Login</a></li>
+      <li><a href="https://app.taliti.id/accounts/signup/" role="button" class="primary" style="width: 100%;">Sign Up Free</a></li>
+      <li><button class="theme-toggle" id="mobile-theme-toggle" title="Toggle theme"><i
+            class="fa-solid fa-moon"></i>&nbsp; Ganti Tema</button></li>
     </ul>
   </div>
 </nav>
+
+<style>
+  .brand-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--brevo-black);
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-link:hover {
+    text-decoration: none;
+    color: var(--brevo-black);
+  }
+</style>
